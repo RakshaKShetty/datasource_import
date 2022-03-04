@@ -5,10 +5,7 @@
   "unreadCommentThreads": 0,
   "color": "#E4D8CC",
   "icon": "joystick",
-  "slug": "datasource-import",
   "evaluationVersion": 2,
-  "publishedModeThemeId": "61c57741db67aa7828fd7472",
-  "editModeThemeId": "61c57741db67aa7828fd7472",
   "createdAt": {
     "seconds": 1645033781,
     "nanos": 447000000
