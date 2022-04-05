@@ -18,20 +18,27 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "formData": {
-        "updateMany": {
-          "limit": "SINGLE"
+        "collection": {
+          "data": "users",
+          "viewType": "component",
+          "componentData": "users"
+        },
+        "command": {
+          "data": "INSERT",
+          "viewType": "component",
+          "componentData": "INSERT"
         },
         "insert": {
-          "documents": "{ \"name\": {{insert_col_input2.text}}\n}"
+          "documents": {
+            "data": "{ \"name\": {{insert_col_input2.text}}\n}",
+            "viewType": "component",
+            "componentData": "{ \"name\": {{insert_col_input2.text}}\n}"
+          }
         },
-        "collection": "users",
-        "delete": {
-          "limit": "SINGLE"
-        },
-        "command": "INSERT",
-        "smartSubstitution": true,
-        "aggregate": {
-          "limit": "101"
+        "smartSubstitution": {
+          "data": true,
+          "viewType": "component",
+          "componentData": true
         }
       }
     },

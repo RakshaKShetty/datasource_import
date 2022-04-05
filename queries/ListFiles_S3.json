@@ -18,36 +18,63 @@
       "paginationType": "NONE",
       "path": "",
       "encodeParamsToggle": true,
-      "body": "{\n\t\"data\": \"\"\n}",
       "formData": {
-        "bucket": "assets-test.appsmith.com",
-        "read": {
-          "usingBase64Encoding": "YES",
-          "dataType": "YES",
-          "expiry": "5"
+        "body": {
+          "data": "{\n\t\"data\": \"\"\n}",
+          "viewType": "component",
+          "componentData": "{\n\t\"data\": \"\"\n}"
         },
-        "create": {
-          "dataType": "YES",
-          "expiry": "5"
+        "bucket": {
+          "data": "assets-test.appsmith.com",
+          "viewType": "component",
+          "componentData": "assets-test.appsmith.com"
+        },
+        "command": {
+          "data": "LIST",
+          "viewType": "component",
+          "componentData": "LIST"
         },
         "list": {
-          "prefix": "{{search_input.text}}",
-          "where": {
-            "condition": "AND",
-            "children": [
-              {
-                "condition": "EQ"
-              }
-            ]
+          "prefix": {
+            "data": "{{search_input.text}}",
+            "viewType": "component",
+            "componentData": "{{search_input.text}}"
           },
-          "expiry": "{{ 60 * 24 }}",
-          "signedUrl": "YES",
-          "unSignedUrl": "YES"
-        },
-        "delete": {
-          "expiry": "5"
-        },
-        "command": "LIST"
+          "where": {
+            "data": {
+              "condition": "AND",
+              "children": [
+                {
+                  "condition": "EQ"
+                }
+              ]
+            },
+            "viewType": "component",
+            "componentData": {
+              "condition": "AND",
+              "children": [
+                {
+                  "condition": "EQ"
+                }
+              ]
+            }
+          },
+          "expiry": {
+            "data": "{{ 60 * 24 }}",
+            "viewType": "component",
+            "componentData": "{{ 60 * 24 }}"
+          },
+          "signedUrl": {
+            "data": "YES",
+            "viewType": "component",
+            "componentData": "YES"
+          },
+          "unSignedUrl": {
+            "data": "YES",
+            "viewType": "component",
+            "componentData": "YES"
+          }
+        }
       }
     },
     "executeOnLoad": true,

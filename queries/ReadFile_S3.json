@@ -16,29 +16,35 @@
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "{{File_List.selectedItem.fileName}}",
       "encodeParamsToggle": true,
-      "body": "{\n\t\"data\": \"\"\n}",
       "formData": {
-        "bucket": "assets-test.appsmith.com",
+        "body": {
+          "data": "{\n\t\"data\": \"\"\n}",
+          "viewType": "component",
+          "componentData": "{\n\t\"data\": \"\"\n}"
+        },
+        "bucket": {
+          "data": "assets-test.appsmith.com",
+          "viewType": "component",
+          "componentData": "assets-test.appsmith.com"
+        },
+        "command": {
+          "data": "READ_FILE",
+          "viewType": "component",
+          "componentData": "READ_FILE"
+        },
+        "path": {
+          "data": "{{File_List.selectedItem.fileName}}",
+          "viewType": "component",
+          "componentData": "{{File_List.selectedItem.fileName}}"
+        },
         "read": {
-          "usingBase64Encoding": "YES",
-          "dataType": "YES",
-          "expiry": "5"
-        },
-        "create": {
-          "dataType": "YES",
-          "expiry": "5"
-        },
-        "list": {
-          "prefix": "",
-          "expiry": "5",
-          "signedUrl": "NO"
-        },
-        "delete": {
-          "expiry": "5"
-        },
-        "command": "READ_FILE"
+          "dataType": {
+            "data": "YES",
+            "viewType": "component",
+            "componentData": "YES"
+          }
+        }
       }
     },
     "executeOnLoad": false,

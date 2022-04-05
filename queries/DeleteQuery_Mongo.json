@@ -19,18 +19,32 @@
       "path": "template_table/{{data_table.selectedRow._ref}}",
       "encodeParamsToggle": true,
       "formData": {
-        "updateMany": {
-          "limit": "SINGLE"
+        "collection": {
+          "data": "users",
+          "viewType": "component",
+          "componentData": "users"
         },
-        "collection": "users",
+        "command": {
+          "data": "DELETE",
+          "viewType": "component",
+          "componentData": "DELETE"
+        },
         "delete": {
-          "query": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
-          "limit": "SINGLE"
+          "query": {
+            "data": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
+            "viewType": "component",
+            "componentData": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }"
+          },
+          "limit": {
+            "data": "SINGLE",
+            "viewType": "component",
+            "componentData": "SINGLE"
+          }
         },
-        "command": "DELETE",
-        "smartSubstitution": true,
-        "aggregate": {
-          "limit": "101"
+        "smartSubstitution": {
+          "data": true,
+          "viewType": "component",
+          "componentData": true
         }
       }
     },
