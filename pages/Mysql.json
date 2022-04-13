@@ -20,7 +20,9 @@
           "type": "CANVAS_WIDGET",
           "canExtend": true,
           "version": 56,
-          "minHeight": 900,
+
+          "minHeight": 1130,
+
           "parentColumnSpace": 1,
           "dynamicTriggerPathList": [],
           "dynamicBindingPathList": [],

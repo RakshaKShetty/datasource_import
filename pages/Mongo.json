@@ -968,7 +968,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Mongo_FindQuery",
               "name": "FindQuery",
               "pluginType": "DB",
               "jsonPathKeys": [
@@ -991,6 +990,10 @@
     ],
     "userPermissions": [],
     "policies": [],
+    "deletedAt": {
+      "seconds": 1649838198,
+      "nanos": 872000000
+    },
     "isHidden": false
   },
   "deleted": false,

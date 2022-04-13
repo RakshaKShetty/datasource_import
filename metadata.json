@@ -5,22 +5,6 @@
   "publishedDefaultPageName": "Public.anime",
   "unpublishedDefaultPageName": "Public.anime",
   "invisibleActionFields": {
-    "Mongo_DeleteQuery": {
-      "unpublishedUserSetOnLoad": false,
-      "publishedUserSetOnLoad": false
-    },
-    "Mongo_FindQuery": {
-      "unpublishedUserSetOnLoad": false,
-      "publishedUserSetOnLoad": false
-    },
-    "Mongo_InsertQuery": {
-      "unpublishedUserSetOnLoad": false,
-      "publishedUserSetOnLoad": false
-    },
-    "Mongo_UpdateQuery": {
-      "unpublishedUserSetOnLoad": false,
-      "publishedUserSetOnLoad": false
-    },
     "Mysql_DeleteQuery": {
       "unpublishedUserSetOnLoad": false,
       "publishedUserSetOnLoad": false
@@ -77,7 +61,7 @@
       "unpublishedUserSetOnLoad": false,
       "publishedUserSetOnLoad": false
     },
-    "js_JSObject1.myFun1": {
+    "api_Api1": {
       "unpublishedUserSetOnLoad": false,
       "publishedUserSetOnLoad": false
     },
