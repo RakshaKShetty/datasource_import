@@ -5,10 +5,6 @@
   "publishedDefaultPageName": "Public.anime",
   "unpublishedDefaultPageName": "Public.anime",
   "invisibleActionFields": {
-    "Firestore_Query1": {
-      "unpublishedUserSetOnLoad": false,
-      "publishedUserSetOnLoad": false
-    },
     "Mongo_DeleteQuery": {
       "unpublishedUserSetOnLoad": false,
       "publishedUserSetOnLoad": false
