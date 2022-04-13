@@ -8,7 +8,7 @@
         "dsl": {
           "widgetName": "MainContainer",
           "backgroundColor": "none",
-          "rightColumn": 822,
+          "rightColumn": 966,
           "snapColumns": 64,
           "detachFromLayout": true,
           "widgetId": "0",
@@ -19,7 +19,7 @@
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
-          "version": 54,
+          "version": 56,
           "minHeight": 1130,
           "parentColumnSpace": 1,
           "dynamicTriggerPathList": [],
@@ -1038,9 +1038,9 @@
               "pluginType": "DB",
               "jsonPathKeys": [
                 "(Table1.pageNo - 1) * Table1.pageSize",
+                "Table1.pageSize",
                 "Table1.searchText || \"\"",
                 "col_select.selectedOptionValue",
-                "Table1.pageSize",
                 "order_select.selectedOptionValue"
               ],
               "timeoutInMillisecond": 10000
