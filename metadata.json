@@ -94,6 +94,14 @@
     "isSystemTheme": true,
     "deleted": false
   },
-  "publishedLayoutmongoEscapedWidgets": {},
-  "unpublishedLayoutmongoEscapedWidgets": {}
+  "publishedLayoutmongoEscapedWidgets": {
+    "Mongo": [
+      "data_table"
+    ]
+  },
+  "unpublishedLayoutmongoEscapedWidgets": {
+    "Mongo": [
+      "data_table"
+    ]
+  }
 }
