@@ -18,19 +18,37 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "formData": {
+        "collection": {
+          "data": "users",
+          "viewType": "component",
+          "componentData": "users"
+        },
+        "command": {
+          "data": "UPDATE",
+          "viewType": "component",
+          "componentData": "UPDATE"
+        },
+        "smartSubstitution": {
+          "data": true,
+          "viewType": "component",
+          "componentData": true
+        },
         "updateMany": {
-          "query": "{ _id: ObjectId('{{data_table.selectedRow._id}}') }",
-          "limit": "SINGLE",
-          "update": "{\t\"name\" : {{update_col_2.text}}\n}"
-        },
-        "collection": "users",
-        "delete": {
-          "limit": "SINGLE"
-        },
-        "command": "UPDATE",
-        "smartSubstitution": true,
-        "aggregate": {
-          "limit": "101"
+          "query": {
+            "data": "{ _id: ObjectId('{{data_table.selectedRow._id}}') }",
+            "viewType": "component",
+            "componentData": "{ _id: ObjectId('{{data_table.selectedRow._id}}') }"
+          },
+          "limit": {
+            "data": "SINGLE",
+            "viewType": "component",
+            "componentData": "SINGLE"
+          },
+          "update": {
+            "data": "{\t\"name\" : {{update_col_2.text}}\n}",
+            "viewType": "component",
+            "componentData": "{\t\"name\" : {{update_col_2.text}}\n}"
+          }
         }
       }
     },

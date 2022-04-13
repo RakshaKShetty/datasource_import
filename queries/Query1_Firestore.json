@@ -22,14 +22,40 @@
       "next": "",
       "prev": "",
       "formData": {
-        "command": "GET_DOCUMENT",
-        "orderBy": "",
-        "limitDocuments": "10",
-        "where": {
-          "condition": "AND"
+        "command": {
+          "data": "GET_DOCUMENT",
+          "viewType": "component",
+          "componentData": "GET_DOCUMENT"
         },
-        "timestampValuePath": "",
-        "deleteKeyPath": ""
+        "deleteKeyPath": {
+          "data": "",
+          "viewType": "component",
+          "componentData": ""
+        },
+        "limitDocuments": {
+          "data": "10",
+          "viewType": "component",
+          "componentData": "10"
+        },
+        "orderBy": {
+          "data": "",
+          "viewType": "component",
+          "componentData": ""
+        },
+        "timestampValuePath": {
+          "data": "",
+          "viewType": "component",
+          "componentData": ""
+        },
+        "where": {
+          "data": {
+            "condition": "AND"
+          },
+          "viewType": "component",
+          "componentData": {
+            "condition": "AND"
+          }
+        }
       }
     },
     "executeOnLoad": false,
