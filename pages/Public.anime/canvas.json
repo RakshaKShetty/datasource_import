@@ -1,14 +1,14 @@
 {
   "unpublishedPage": {
-    "name": "Mongo",
-    "slug": "mongo",
+    "name": "Public.anime",
+    "slug": "public-anime",
     "layouts": [
       {
         "viewMode": false,
         "dsl": {
           "widgetName": "MainContainer",
           "backgroundColor": "none",
-          "rightColumn": 822,
+          "rightColumn": 966,
           "snapColumns": 64,
           "detachFromLayout": true,
           "widgetId": "0",
@@ -19,7 +19,7 @@
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
-          "version": 52,
+          "version": 57,
           "minHeight": 1130,
           "parentColumnSpace": 1,
           "dynamicTriggerPathList": [],
@@ -50,7 +50,7 @@
                   "widgetId": "59rw5mx0bq",
                   "containerStyle": "none",
                   "topRow": 0,
-                  "bottomRow": 890,
+                  "bottomRow": 880,
                   "parentRowSpace": 1,
                   "isVisible": "true",
                   "canExtend": false,
@@ -65,12 +65,10 @@
                   "dynamicBindingPathList": [],
                   "children": [
                     {
-                      "widgetName": "data_table",
+                      "widgetName": "Table1",
                       "columnOrder": [
                         "name",
-                        "_id",
-                        "gender",
-                        "email",
+                        "rating",
                         "customColumn1"
                       ],
                       "dynamicPropertyPathList": [
@@ -82,7 +80,7 @@
                       "topRow": 10,
                       "bottomRow": 86,
                       "parentRowSpace": 10,
-                      "onPageChange": "{{FindQuery.run()}}",
+                      "onPageChange": "{{SelectQuery.run()}}",
                       "isSortable": true,
                       "type": "TABLE_WIDGET",
                       "defaultSelectedRow": "0",
@@ -106,52 +104,34 @@
                           "key": "tableData"
                         },
                         {
-                          "key": "primaryColumns._id.computedValue"
-                        },
-                        {
                           "key": "primaryColumns.name.computedValue"
                         },
                         {
-                          "key": "primaryColumns.gender.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.email.computedValue"
+                          "key": "primaryColumns.rating.computedValue"
                         }
                       ],
                       "leftColumn": 0,
                       "primaryColumns": {
-                        "appsmith_mongo_escape_id": {
+                        "customColumn1": {
                           "isCellVisible": true,
-                          "isDerived": false,
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow._id))}}",
+                          "isDerived": true,
+                          "computedValue": "{{Table1.sanitizedTableData.map((currentRow) => ( currentRow.customColumn1))}}",
+                          "onClick": "{{showModal('Delete_Modal')}}",
                           "textSize": "PARAGRAPH",
-                          "index": 1,
+                          "buttonColor": "#DD4B34",
+                          "index": 7,
                           "isVisible": true,
-                          "label": "_id",
-                          "columnType": "text",
+                          "label": "customColumn1",
+                          "buttonLabel": "{{Table1.sanitizedTableData.map((currentRow) => { return 'Delete'})}}",
+                          "columnType": "button",
                           "horizontalAlignment": "LEFT",
                           "width": 150,
                           "enableFilter": true,
                           "enableSort": true,
-                          "id": "_id",
-                          "verticalAlignment": "CENTER"
-                        },
-                        "gender": {
-                          "index": 2,
-                          "width": 150,
-                          "id": "gender",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "text",
-                          "textSize": "PARAGRAPH",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
+                          "id": "customColumn1",
                           "isDisabled": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "gender",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.gender))}}"
+                          "buttonLabelColor": "#FFFFFF",
+                          "verticalAlignment": "CENTER"
                         },
                         "name": {
                           "index": 0,
@@ -168,33 +148,12 @@
                           "isCellVisible": true,
                           "isDerived": false,
                           "label": "name",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.name))}}"
+                          "computedValue": "{{Table1.sanitizedTableData.map((currentRow) => ( currentRow.name))}}"
                         },
-                        "customColumn1": {
-                          "isCellVisible": true,
-                          "isDerived": true,
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.customColumn1))}}",
-                          "onClick": "{{showModal('Delete_Modal')}}",
-                          "textSize": "PARAGRAPH",
-                          "buttonColor": "#DD4B34",
-                          "index": 7,
-                          "isVisible": true,
-                          "label": "customColumn1",
-                          "buttonLabel": "{{data_table.sanitizedTableData.map((currentRow) => { return 'Delete'})}}",
-                          "columnType": "button",
-                          "horizontalAlignment": "LEFT",
+                        "rating": {
+                          "index": 1,
                           "width": 150,
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "id": "customColumn1",
-                          "isDisabled": false,
-                          "buttonLabelColor": "#FFFFFF",
-                          "verticalAlignment": "CENTER"
-                        },
-                        "email": {
-                          "index": 3,
-                          "width": 150,
-                          "id": "email",
+                          "id": "rating",
                           "horizontalAlignment": "LEFT",
                           "verticalAlignment": "CENTER",
                           "columnType": "text",
@@ -205,8 +164,8 @@
                           "isDisabled": false,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "email",
-                          "computedValue": "{{data_table.sanitizedTableData.map((currentRow) => ( currentRow.email))}}"
+                          "label": "rating",
+                          "computedValue": "{{Table1.sanitizedTableData.map((currentRow) => ( currentRow.rating))}}"
                         }
                       },
                       "delimiter": ",",
@@ -220,7 +179,7 @@
                           "index": 7,
                           "isVisible": true,
                           "label": "customColumn1",
-                          "buttonLabel": "{{data_table.sanitizedTableData.map((currentRow) => { return 'Delete'})}}",
+                          "buttonLabel": "{{Table1.sanitizedTableData.map((currentRow) => { return 'Delete'})}}",
                           "columnType": "button",
                           "horizontalAlignment": "LEFT",
                           "width": 150,
@@ -235,7 +194,7 @@
                       "textSize": "PARAGRAPH",
                       "widgetId": "jabdu9f16g",
                       "isVisibleFilters": true,
-                      "tableData": "{{FindQuery.data}}",
+                      "tableData": "{{SelectQuery.data}}",
                       "isVisible": "true",
                       "label": "Data",
                       "searchKey": "",
@@ -244,7 +203,7 @@
                       "serverSidePaginationEnabled": true,
                       "isLoading": false,
                       "isVisibleCompactMode": true,
-                      "onSearchTextChanged": "{{FindQuery.run()}}",
+                      "onSearchTextChanged": "{{SelectQuery.run()}}",
                       "horizontalAlignment": "LEFT",
                       "isVisibleSearch": true,
                       "isVisiblePagination": true,
@@ -256,6 +215,43 @@
                         "id": 228,
                         "status": 75
                       }
+                    },
+                    {
+                      "isRequired": false,
+                      "widgetName": "col_select",
+                      "isFilterable": true,
+                      "rightColumn": 22,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
+                      "widgetId": "asmgosgxjm",
+                      "topRow": 5,
+                      "bottomRow": 9,
+                      "parentRowSpace": 10,
+                      "isVisible": "{{SelectQuery.data.length > 0}}",
+                      "label": "",
+                      "type": "DROP_DOWN_WIDGET",
+                      "version": 1,
+                      "parentId": "59rw5mx0bq",
+                      "isLoading": false,
+                      "defaultOptionValue": "rating",
+                      "parentColumnSpace": 18.8828125,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onOptionChange"
+                        }
+                      ],
+                      "leftColumn": 7,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
+                      "options": "[\n{\n\t\"label\": \"name\",\n\t\"value\": \"name\"\n}, \n{\n\t\"label\": \"rating\",\n\t\"value\": \"rating\"\n}]",
+                      "onOptionChange": "{{SelectQuery.run()}}",
+                      "isDisabled": false
                     },
                     {
                       "widgetName": "Text15",
@@ -274,6 +270,7 @@
                       "isLoading": false,
                       "parentColumnSpace": 19.75,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 0,
                       "dynamicBindingPathList": [],
                       "fontSize": "PARAGRAPH",
@@ -283,7 +280,7 @@
                       "isRequired": false,
                       "widgetName": "order_select",
                       "isFilterable": true,
-                      "rightColumn": 30,
+                      "rightColumn": 37,
                       "dynamicPropertyPathList": [
                         {
                           "key": "isVisible"
@@ -293,13 +290,13 @@
                       "topRow": 5,
                       "bottomRow": 9,
                       "parentRowSpace": 10,
-                      "isVisible": "{{FindQuery.data.length > 0}}",
+                      "isVisible": "{{SelectQuery.data.length > 0}}",
                       "label": "",
                       "type": "DROP_DOWN_WIDGET",
                       "version": 1,
                       "parentId": "59rw5mx0bq",
                       "isLoading": false,
-                      "defaultOptionValue": "1",
+                      "defaultOptionValue": "ASC",
                       "parentColumnSpace": 19.75,
                       "dynamicTriggerPathList": [
                         {
@@ -312,13 +309,13 @@
                           "key": "isVisible"
                         }
                       ],
-                      "options": "[\n  {\n    \"label\": \"ASC\",\n    \"value\": \"1\"\n  },\n  {\n    \"label\": \"DESC\",\n    \"value\": \"-1\"\n  }\n]",
-                      "onOptionChange": "{{FindQuery.run()}}",
+                      "options": "[\n  {\n    \"label\": \"Ascending\",\n    \"value\": \"ASC\"\n  },\n  {\n    \"label\": \"Descending\",\n    \"value\": \"DESC\"\n  }\n]",
+                      "onOptionChange": "{{SelectQuery.run()}}",
                       "isDisabled": false
                     },
                     {
                       "widgetName": "Text16",
-                      "rightColumn": 41,
+                      "rightColumn": 64,
                       "textAlign": "LEFT",
                       "widgetId": "urzv99hdc8",
                       "topRow": 0,
@@ -333,19 +330,20 @@
                       "isLoading": false,
                       "parentColumnSpace": 11.78515625,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 0,
                       "dynamicBindingPathList": [],
                       "fontSize": "HEADING1",
-                      "text": "users Data"
+                      "text": "public_anime Data"
                     },
                     {
                       "boxShadow": "NONE",
                       "widgetName": "refresh_btn",
                       "rightColumn": 64,
-                      "onClick": "{{FindQuery.run()}}",
+                      "onClick": "{{SelectQuery.run()}}",
                       "iconName": "refresh",
                       "buttonColor": "#03B365",
-                      "widgetId": "nj85l57r47",
+                      "widgetId": "xp5u9a9nzq",
                       "topRow": 5,
                       "bottomRow": 9,
                       "parentRowSpace": 10,
@@ -373,7 +371,7 @@
                       "onClick": "{{showModal('Insert_Modal')}}",
                       "iconName": "add",
                       "buttonColor": "#03B365",
-                      "widgetId": "atgojamsmw",
+                      "widgetId": "nh3cu4lb1g",
                       "topRow": 5,
                       "bottomRow": 9,
                       "parentRowSpace": 10,
@@ -454,6 +452,7 @@
                       "parentId": "zi8fjakv8o",
                       "isLoading": false,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 1,
                       "dynamicBindingPathList": [],
                       "fontSize": "HEADING1",
@@ -489,7 +488,7 @@
                     {
                       "widgetName": "Delete_Button",
                       "rightColumn": 64,
-                      "onClick": "{{DeleteQuery.run(() => FindQuery.run(() => closeModal('Delete_Modal')), () => {})}}",
+                      "onClick": "{{DeleteQuery.run(() => SelectQuery.run(() => closeModal('Delete_Modal')), () => {})}}",
                       "isDefaultClickDisabled": true,
                       "dynamicPropertyPathList": [
                         {
@@ -534,6 +533,7 @@
                       "isLoading": false,
                       "parentColumnSpace": 6.875,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 1,
                       "dynamicBindingPathList": [],
                       "fontSize": "PARAGRAPH",
@@ -580,7 +580,7 @@
                   "version": 1,
                   "parentId": "vmorzie6eq",
                   "shouldScrollContents": false,
-                  "minHeight": 600,
+                  "minHeight": 604,
                   "isLoading": false,
                   "parentColumnSpace": 1,
                   "dynamicTriggerPathList": [],
@@ -593,7 +593,7 @@
                       "rightColumn": 64,
                       "widgetId": "1ruewbc4ef",
                       "topRow": 0,
-                      "bottomRow": 58,
+                      "bottomRow": 59,
                       "parentRowSpace": 10,
                       "isVisible": "true",
                       "type": "FORM_WIDGET",
@@ -602,7 +602,7 @@
                       "shouldScrollContents": false,
                       "parentColumnSpace": 8,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 1,
+                      "leftColumn": 0,
                       "dynamicBindingPathList": [],
                       "children": [
                         {
@@ -630,7 +630,7 @@
                               "resetFormOnClick": true,
                               "widgetName": "insert_button",
                               "rightColumn": 62,
-                              "onClick": "{{InsertQuery.run(() => FindQuery.run(() => closeModal('Insert_Modal')))}}",
+                              "onClick": "{{InsertQuery.run(() => SelectQuery.run(() => closeModal('Insert_Modal')))}}",
                               "isDefaultClickDisabled": true,
                               "dynamicPropertyPathList": [
                                 {
@@ -687,6 +687,29 @@
                               "text": "Close"
                             },
                             {
+                              "widgetName": "Text21",
+                              "rightColumn": 19,
+                              "textAlign": "RIGHT",
+                              "widgetId": "cfmxebyn06",
+                              "topRow": 5,
+                              "bottomRow": 9,
+                              "parentRowSpace": 10,
+                              "isVisible": "true",
+                              "fontStyle": "BOLD",
+                              "type": "TEXT_WIDGET",
+                              "textColor": "#231F20",
+                              "version": 1,
+                              "parentId": "tp9pui0e6y",
+                              "isLoading": false,
+                              "parentColumnSpace": 7.6865234375,
+                              "dynamicTriggerPathList": [],
+                              "overflow": "NONE",
+                              "leftColumn": 3,
+                              "dynamicBindingPathList": [],
+                              "fontSize": "PARAGRAPH",
+                              "text": "rating:"
+                            },
+                            {
                               "widgetName": "Text22",
                               "rightColumn": 19,
                               "textAlign": "RIGHT",
@@ -703,6 +726,7 @@
                               "isLoading": false,
                               "parentColumnSpace": 7.6865234375,
                               "dynamicTriggerPathList": [],
+                              "overflow": "NONE",
                               "leftColumn": 2,
                               "dynamicBindingPathList": [],
                               "fontSize": "PARAGRAPH",
@@ -720,14 +744,48 @@
                               "type": "TEXT_WIDGET",
                               "textColor": "#231F20",
                               "version": 1,
-                              "shouldScroll": false,
                               "parentId": "tp9pui0e6y",
                               "isLoading": false,
                               "dynamicTriggerPathList": [],
+                              "overflow": "NONE",
                               "leftColumn": 0,
                               "dynamicBindingPathList": [],
                               "fontSize": "HEADING1",
                               "text": "Insert Row"
+                            },
+                            {
+                              "widgetName": "insert_col_input1",
+                              "displayName": "Input",
+                              "iconSVG": "/static/media/icon.9f505595.svg",
+                              "topRow": 5,
+                              "bottomRow": 9,
+                              "parentRowSpace": 10,
+                              "autoFocus": false,
+                              "type": "INPUT_WIDGET_V2",
+                              "hideCard": false,
+                              "animateLoading": false,
+                              "parentColumnSpace": 7.8125,
+                              "dynamicTriggerPathList": [],
+                              "resetOnSubmit": true,
+                              "leftColumn": 20,
+                              "dynamicBindingPathList": [],
+                              "labelStyle": "",
+                              "inputType": "TEXT",
+                              "placeholderText": "rating",
+                              "isDisabled": false,
+                              "key": "0equv9lg65",
+                              "validation": "true",
+                              "isRequired": true,
+                              "rightColumn": 62,
+                              "widgetId": "udpykd6frr",
+                              "isVisible": "true",
+                              "label": "",
+                              "version": 2,
+                              "parentId": "tp9pui0e6y",
+                              "renderMode": "CANVAS",
+                              "isLoading": false,
+                              "iconAlign": "left",
+                              "defaultText": ""
                             },
                             {
                               "widgetName": "insert_col_input2",
@@ -740,10 +798,10 @@
                               "type": "INPUT_WIDGET_V2",
                               "hideCard": false,
                               "animateLoading": false,
-                              "parentColumnSpace": 7.685546875,
+                              "parentColumnSpace": 7.8125,
                               "dynamicTriggerPathList": [],
                               "resetOnSubmit": true,
-                              "leftColumn": 21,
+                              "leftColumn": 20,
                               "dynamicBindingPathList": [],
                               "labelStyle": "",
                               "inputType": "TEXT",
@@ -752,8 +810,8 @@
                               "key": "0equv9lg65",
                               "validation": "true",
                               "isRequired": true,
-                              "rightColumn": 61,
-                              "widgetId": "b1y8w16g8n",
+                              "rightColumn": 62,
+                              "widgetId": "okr4t68xnm",
                               "isVisible": "true",
                               "label": "",
                               "version": 2,
@@ -772,7 +830,7 @@
                 }
               ],
               "width": 532,
-              "height": 600
+              "height": 604
             },
             {
               "widgetName": "Form1",
@@ -787,7 +845,7 @@
               "topRow": 0,
               "bottomRow": 46,
               "parentRowSpace": 10,
-              "isVisible": "{{!!data_table.selectedRow._id}}",
+              "isVisible": "{{!!Table1.selectedRow.rating}}",
               "type": "FORM_WIDGET",
               "parentId": "0",
               "isLoading": false,
@@ -826,7 +884,7 @@
                       "resetFormOnClick": false,
                       "widgetName": "update_button",
                       "rightColumn": 63,
-                      "onClick": "{{UpdateQuery.run(() => FindQuery.run(), () => showAlert('Error while updating resource!','error'))}}",
+                      "onClick": "{{UpdateQuery.run(() => SelectQuery.run(), () => showAlert('Error while updating resource!','error'))}}",
                       "isDefaultClickDisabled": true,
                       "dynamicPropertyPathList": [],
                       "buttonColor": "#03B365",
@@ -884,7 +942,7 @@
                       "textAlign": "LEFT",
                       "widgetId": "4hnz8ktmz5",
                       "topRow": 0,
-                      "bottomRow": 6,
+                      "bottomRow": 4,
                       "parentRowSpace": 10,
                       "isVisible": "true",
                       "fontStyle": "BOLD",
@@ -895,18 +953,23 @@
                       "isLoading": false,
                       "parentColumnSpace": 8.8963623046875,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 1,
-                      "dynamicBindingPathList": [],
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "text"
+                        }
+                      ],
                       "fontSize": "HEADING1",
-                      "text": "Update Selected Row"
+                      "text": "Update Row: {{Table1.selectedRow.rating}}"
                     },
                     {
-                      "widgetName": "Text18",
+                      "widgetName": "Text17",
                       "rightColumn": 18,
                       "textAlign": "RIGHT",
-                      "widgetId": "xqcsd2e5dj",
-                      "topRow": 15,
-                      "bottomRow": 19,
+                      "widgetId": "afzzc7q8af",
+                      "topRow": 6,
+                      "bottomRow": 10,
                       "parentRowSpace": 10,
                       "isVisible": "true",
                       "fontStyle": "BOLD",
@@ -917,6 +980,7 @@
                       "isLoading": false,
                       "parentColumnSpace": 7.15625,
                       "dynamicTriggerPathList": [],
+                      "overflow": "NONE",
                       "leftColumn": 1,
                       "dynamicBindingPathList": [],
                       "fontSize": "PARAGRAPH",
@@ -926,8 +990,8 @@
                       "widgetName": "update_col_2",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595.svg",
-                      "topRow": 15,
-                      "bottomRow": 19,
+                      "topRow": 6,
+                      "bottomRow": 10,
                       "parentRowSpace": 10,
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
@@ -945,11 +1009,11 @@
                       "labelStyle": "",
                       "inputType": "TEXT",
                       "isDisabled": false,
-                      "key": "0equv9lg65",
+                      "key": "xsmln3d0zi",
                       "validation": "true",
                       "isRequired": true,
                       "rightColumn": 63,
-                      "widgetId": "s4pbk7f7dg",
+                      "widgetId": "nax7kexro0",
                       "isVisible": "true",
                       "label": "",
                       "version": 2,
@@ -957,7 +1021,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "iconAlign": "left",
-                      "defaultText": "{{data_table.selectedRow.name}}"
+                      "defaultText": "{{Table1.selectedRow.name.toString()}}"
                     }
                   ]
                 }
@@ -968,35 +1032,68 @@
         "layoutOnLoadActions": [
           [
             {
-              "name": "FindQuery",
+              "id": "Public.anime_SelectQuery",
+              "name": "SelectQuery",
+              "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [
-                "key_select.selectedOptionValue",
-                "data_table.pageSize",
-                "data_table.searchText||\"\"",
-                "(data_table.pageNo - 1) * data_table.pageSize",
+                "(Table1.pageNo - 1) * Table1.pageSize",
+                "Table1.pageSize",
+                "Table1.searchText || \"\"",
+                "col_select.selectedOptionValue",
                 "order_select.selectedOptionValue"
               ],
               "timeoutInMillisecond": 10000
             }
           ]
         ],
+        "widgetNames": [
+          "Alert_text",
+          "Button1",
+          "Canvas1",
+          "Canvas2",
+          "Canvas3",
+          "Canvas4",
+          "Canvas5",
+          "Container1",
+          "Delete_Button",
+          "Delete_Modal",
+          "Form1",
+          "Form2",
+          "Insert_Modal",
+          "MainContainer",
+          "Table1",
+          "Text12",
+          "Text13Copy",
+          "Text15",
+          "Text16",
+          "Text17",
+          "Text21",
+          "Text22",
+          "Text9",
+          "add_btn",
+          "col_select",
+          "insert_button",
+          "insert_col_input1",
+          "insert_col_input2",
+          "order_select",
+          "refresh_btn",
+          "reset_button",
+          "reset_update_button",
+          "update_button",
+          "update_col_2"
+        ],
         "validOnPageLoadActions": true,
-        "id": "Mongo",
+        "id": "Public.anime",
         "deleted": false,
         "policies": [],
         "userPermissions": []
       }
     ],
     "userPermissions": [],
-    "policies": [],
-    "deletedAt": {
-      "seconds": 1649842116,
-      "nanos": 368000000
-    },
-    "isHidden": false
+    "policies": []
   },
   "deleted": false,
   "policies": [],
-  "gitSyncId": "620d35a203bc3d54848c36d1_620d35f103bc3d54848c36e3"
+  "gitSyncId": "620d35a203bc3d54848c36d1_620d35e803bc3d54848c36d8"
 }

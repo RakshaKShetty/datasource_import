@@ -1,7 +1,6 @@
 {
-  "fileFormatVersion": 1,
   "clientSchemaVersion": 1,
-  "serverSchemaVersion": 3,
+  "serverSchemaVersion": 4,
   "publishedDefaultPageName": "Public.anime",
   "unpublishedDefaultPageName": "Public.anime",
   "invisibleActionFields": {
@@ -82,26 +81,22 @@
       "publishedUserSetOnLoad": false
     }
   },
-  "editModeTheme": {
-    "name": "Classic",
-    "displayName": "Classic",
-    "isSystemTheme": true,
-    "deleted": false
-  },
   "publishedTheme": {
     "name": "Classic",
     "displayName": "Classic",
     "isSystemTheme": true,
-    "deleted": false
-  },
-  "publishedLayoutmongoEscapedWidgets": {
-    "Mongo": [
-      "data_table"
+    "deleted": false,
+    "policies": [
+      {
+        "permission": "read:themes",
+        "users": [
+          "anonymousUser"
+        ],
+        "groups": []
+      }
     ]
   },
-  "unpublishedLayoutmongoEscapedWidgets": {
-    "Mongo": [
-      "data_table"
-    ]
-  }
+  "publishedLayoutmongoEscapedWidgets": {},
+  "unpublishedLayoutmongoEscapedWidgets": {},
+  "fileFormatVersion": 2
 }
