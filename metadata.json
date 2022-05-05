@@ -8,7 +8,8 @@
     "js",
     "api",
     "SMTP_",
-    "Public.anime"
+    "Public.anime",
+    "Page1"
   ],
   "publishedPageOrder": [
     "S3",
@@ -17,7 +18,8 @@
     "js",
     "api",
     "SMTP_",
-    "Public.anime"
+    "Public.anime",
+    "Page1"
   ],
   "publishedDefaultPageName": "Public.anime",
   "unpublishedDefaultPageName": "Public.anime",
