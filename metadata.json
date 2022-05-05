@@ -1,6 +1,24 @@
 {
   "clientSchemaVersion": 1,
   "serverSchemaVersion": 4,
+  "pageOrder": [
+    "S3",
+    "snowflake",
+    "Mysql",
+    "js",
+    "api",
+    "SMTP_",
+    "Public.anime"
+  ],
+  "publishedPageOrder": [
+    "S3",
+    "snowflake",
+    "Mysql",
+    "js",
+    "api",
+    "SMTP_",
+    "Public.anime"
+  ],
   "publishedDefaultPageName": "Public.anime",
   "unpublishedDefaultPageName": "Public.anime",
   "invisibleActionFields": {
