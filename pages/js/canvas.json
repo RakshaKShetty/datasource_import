@@ -64,10 +64,6 @@
           ]
         },
         "layoutOnLoadActions": [],
-        "widgetNames": [
-          "Input1",
-          "MainContainer"
-        ],
         "validOnPageLoadActions": true,
         "id": "js",
         "deleted": false,
@@ -80,6 +76,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "policies": [],
   "gitSyncId": "62568679e4f28636dd152d4a_6256879fe4f28636dd152d9d"
 }

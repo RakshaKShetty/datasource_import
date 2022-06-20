@@ -27,9 +27,6 @@
           "children": []
         },
         "layoutOnLoadActions": [],
-        "widgetNames": [
-          "MainContainer"
-        ],
         "validOnPageLoadActions": true,
         "id": "SMTP_",
         "deleted": false,
@@ -42,6 +39,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "policies": [],
   "gitSyncId": "620d35a203bc3d54848c36d1_620d373e03bc3d54848c3757"
 }

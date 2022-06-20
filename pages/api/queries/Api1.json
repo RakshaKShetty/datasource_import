@@ -6,6 +6,7 @@
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
+      "organizationId": "628b575f1f6d770171122b4f",
       "datasourceConfiguration": {
         "sshProxyEnabled": false,
         "url": "https://mock-api.appsmith.com"

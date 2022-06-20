@@ -280,10 +280,6 @@
             }
           ]
         ],
-        "widgetNames": [
-          "MainContainer",
-          "Table1"
-        ],
         "validOnPageLoadActions": true,
         "id": "api",
         "deleted": false,
@@ -296,6 +292,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "policies": [],
   "gitSyncId": "625684eee4f28636dd152cca_6256873fe4f28636dd152d8c"
 }

@@ -62,10 +62,6 @@
           ]
         },
         "layoutOnLoadActions": [],
-        "widgetNames": [
-          "Audio1",
-          "MainContainer"
-        ],
         "validOnPageLoadActions": true,
         "id": "Page1",
         "deleted": false,
@@ -77,6 +73,5 @@
     "policies": []
   },
   "deleted": false,
-  "policies": [],
   "gitSyncId": "624ab94fce51c44328c10cf8_6273deb4690cd52a6b85e918"
 }
